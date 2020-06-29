@@ -109,9 +109,11 @@ const setBackground = () => {
     if (pic) {
       document.getElementById('author').style.display = 'none';
       document.getElementById('removeupload').style.display = 'block';
+      document.getElementById('upload').textContent = 'Upload new photo';
     } else {
       document.getElementById('removeupload').style.display = 'none';
       document.getElementById('author').style.display = 'flex';
+      document.getElementById('upload').textContent = 'Upload your own';
     }
   });
 };
