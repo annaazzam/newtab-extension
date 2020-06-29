@@ -1,3 +1,7 @@
+body * {
+  font-family: 'Karla', sans-serif;
+}
+
 #background {
     position: absolute;
     top: 0;
@@ -7,4 +11,40 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.text {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 16px;
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 1.5em;
+}
+
+.text a {
+    color: white;
+}
+
+#username {
+    transition: transform 0.2s ease;
+}
+
+#username:hover {
+    transform: scale(1.05);
+}
+
+.bottomGradient {
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0, 0, 0, 0.89) 100%);
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 20%;
+}
+
+#credit {
+    margin-right: 12px;
 }

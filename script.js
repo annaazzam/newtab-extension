@@ -1,6 +1,3 @@
-console.log('script');
-
-//https://unsplash.com/@username
 const defaultImages = [
   {
     url: 'https://images.unsplash.com/photo-1593270573246-2dca2f2c1c43?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1952&q=80',
@@ -73,8 +70,16 @@ const setImage = (image) => {
   document.getElementById('background').style.backgroundImage = `url(${image})`;
 };
 
+const setCredit = (credit, account) => {
+  document.getElementById('credit').textContent = credit;
+  document.getElementById('username').href = `https://unsplash.com/${account}`;
+  document.getElementById('username').textContent = account;
+};
+
+
 getExistingPicture().then(pic => {
   const randomNumber = Math.floor(Math.random() * defaultImages.length);
-  const randomImage = defaultImages[randomNumber].url;
-  setImage(pic || randomImage);
+  const randomImage = defaultImages[randomNumber];
+  setImage(pic || randomImage.url);
+  !pic && setCredit(randomImage.credit, randomImage.username);
 });
