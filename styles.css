@@ -68,16 +68,32 @@ body * {
     display: none;
 }
 
-#time {
+.timeContainer {
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     color: white;
-    font-size: 13em;
-    font-weight: bold;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#time {
+    font-size: 13em;
+    font-weight: bold;
+    opacity: 0;
+    animation: floatIn 1.5s 0.5s ease forwards;
+}
+
+@keyframes floatIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

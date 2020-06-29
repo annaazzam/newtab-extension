@@ -124,10 +124,12 @@ const startTime = () => {
   var today = new Date();
   var h = today.getHours();
   var m = today.getMinutes();
-  var s = today.getSeconds();
   m = checkTime(m);
-  s = checkTime(s);
-  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+  let end = 'am';
+  if (h >= 12) {
+    end = 'pm';
+  }
+  document.getElementById('time').innerHTML = (h % 12) + ':' + m + end;
   var t = setTimeout(startTime, 500);
 }
 const checkTime = (i) => {
