@@ -11,15 +11,16 @@ body * {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    filter: brightness(0.9);
 }
 
 .text {
     position: absolute;
-    left: 0;
-    right: 0;
+    left: 16px;
+    right: 16px;
     bottom: 16px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     color: white;
     font-size: 1.5em;
 }
@@ -28,11 +29,17 @@ body * {
     color: white;
 }
 
-#username {
+.author {
+    display: flex;
+}
+
+#username,
+#upload {
     transition: transform 0.2s ease;
 }
 
-#username:hover {
+#username:hover,
+#upload:hover {
     transform: scale(1.05);
 }
 
@@ -47,4 +54,8 @@ body * {
 
 #credit {
     margin-right: 12px;
+}
+
+#upload {
+    cursor: pointer;
 }

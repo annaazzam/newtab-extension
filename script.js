@@ -56,7 +56,13 @@ const defaultImages = [
   }
 ];
 
-chrome.storage.local.remove("newtabPicture");
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('upload').addEventListener('click', () => {
+    document.querySelector('input[type="file"]').click();
+  });
+
+  document.querySelector('input[type="file"]').addEventListener('change', onImageUpload);
+});
 
 const getExistingPicture = () => {
   return new Promise((resolve) => {
@@ -65,6 +71,17 @@ const getExistingPicture = () => {
     });
   });
 }
+
+const onImageUpload = (event) => {
+  var reader = new FileReader();
+  reader.onload = () => {
+    const url = reader.result;
+    chrome.storage.local.set({ "newtabPicture": url }, (result) => {
+      console.log('set newtabpicture');
+    });
+  };
+  reader.readAsDataURL(event.target.files[0]);
+};
 
 const setImage = (image) => {
   document.getElementById('background').style.backgroundImage = `url(${image})`;
@@ -75,7 +92,6 @@ const setCredit = (credit, account) => {
   document.getElementById('username').href = `https://unsplash.com/${account}`;
   document.getElementById('username').textContent = account;
 };
-
 
 getExistingPicture().then(pic => {
   const randomNumber = Math.floor(Math.random() * defaultImages.length);
