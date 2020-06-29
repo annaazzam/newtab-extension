@@ -15,7 +15,7 @@ const getExistingPicture = () => {
 }
 
 const setImage = (image) => {
-  document.getElementById('background').src = image;
+  document.getElementById('background').style.backgroundImage = `url(${image})`;
 };
 
 getExistingPicture().then(pic => {
