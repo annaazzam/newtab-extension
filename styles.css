@@ -29,17 +29,20 @@ body * {
     color: white;
 }
 
-.author {
+#author {
     display: flex;
+    display: none;
 }
 
 #username,
-#upload {
+#upload,
+#removeupload {
     transition: transform 0.2s ease;
 }
 
 #username:hover,
-#upload:hover {
+#upload:hover,
+#removeupload:hover {
     transform: scale(1.05);
 }
 
@@ -56,6 +59,11 @@ body * {
     margin-right: 12px;
 }
 
-#upload {
+#upload,
+#removeupload {
     cursor: pointer;
+}
+
+#removeupload {
+    display: none;
 }
