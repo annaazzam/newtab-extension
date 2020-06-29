@@ -64,6 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelector('input[type="file"]').addEventListener('change', onImageUpload);
 
   document.getElementById('removeupload').addEventListener('click', removeUpload);
+
+  startTime();
 });
 
 const getExistingPicture = () => {
@@ -117,5 +119,20 @@ const setBackground = () => {
     }
   });
 };
+
+const startTime = () => {
+  var today = new Date();
+  var h = today.getHours();
+  var m = today.getMinutes();
+  var s = today.getSeconds();
+  m = checkTime(m);
+  s = checkTime(s);
+  document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+  var t = setTimeout(startTime, 500);
+}
+const checkTime = (i) => {
+  if (i < 10) {i = "0" + i};  // 0-pad numbers < 10
+  return i;
+}
 
 setBackground();

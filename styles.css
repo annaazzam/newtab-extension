@@ -1,5 +1,5 @@
 body * {
-  font-family: 'Karla', sans-serif;
+    font-family: 'Karla', sans-serif;
 }
 
 #background {
@@ -66,4 +66,18 @@ body * {
 
 #removeupload {
     display: none;
+}
+
+#time {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    font-size: 13em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
