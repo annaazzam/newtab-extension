@@ -1,0 +1,13 @@
+{
+  "name": "The New App Launcher",
+  "description": "Launches apps, the good way!",
+  "manifest_version": 2,
+  "version": "0.0.0.1",
+  "permissions" : [
+    "management",
+    "storage"
+  ],
+  "chrome_url_overrides" : {
+      "newtab": "newtab.html"
+  }
+}
