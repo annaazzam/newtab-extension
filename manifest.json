@@ -1,6 +1,6 @@
 {
-  "name": "The New App Launcher",
-  "description": "Launches apps, the good way!",
+  "name": "Simple Newtab",
+  "description": "A simple, clean new-tab page.",
   "manifest_version": 2,
   "version": "0.0.0.1",
   "permissions" : [
