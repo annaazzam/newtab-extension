@@ -1,6 +1,6 @@
 {
   "name": "Simple Newtab",
-  "description": "A simple, clean new-tab page. This extension replaces the new tab page with a collection of beautiful curated photography, and also allows you to upload your own.",
+  "description": "A simple, clean new-tab page. Replaces the new tab page with a collection of beautiful curated photography.",
   "manifest_version": 2,
   "version": "0.0.0.1",
   "permissions" : [
